@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+/*-----------------------------*\
+    #functions
+\*-----------------------------*/
+/*|| conver from px to rem*/
+/*-----------------------------*\
+    #variables 
+\*-----------------------------*/
+/*|| global variables*/
+:root {
+  --font-size-number: 2rem;
+}
+
+/*|| Breakpoint for different viewports*/
+/*-----------------------------*\
+    #Mixins
+\*-----------------------------*/
+/*-----------------------------*\
+    #reset
+\*-----------------------------*/
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/*|| remove the default styles*/
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/*|| fit the container*/
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a,
+a:visited,
+a:focus {
+  text-decoration: none;
+}
+
+/*|| remove the outline when fouced but reapply it when tabbed*/
+button {
+  cursor: pointer;
+}
+button:focus {
+  outline: max(1, 0.1em) solid;
+  outline-offset: -0.25rem;
+}
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+button:focus-visible {
+  outline: max(1, 0.1em) solid;
+  outline-offset: -0.25rem;
+}
+
+/* Remove all animations and transitions
+for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*# sourceMappingURL=/main.77bb5cfd.css.map */

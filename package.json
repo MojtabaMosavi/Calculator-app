@@ -1,0 +1,21 @@
+{
+  "name": "calculator-app-main",
+  "version": "1.0.0",
+  "description": "This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel run build src/index.html",
+    "clean": "rm ./dist",
+    "start" :" parcel src/index.html"
+  },
+  "keywords": [],
+  "author": "Mojtaba Mosavi",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.38.0"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1"
+  }
+}
