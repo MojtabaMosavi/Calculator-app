@@ -1,0 +1,16 @@
+/*-----------------------------*\
+    #variables 
+\*-----------------------------*/
+
+/*|| global variables*/
+
+:root {
+  --font-size-number: 2rem;
+}
+
+/*|| Breakpoint for different viewports*/
+$breakPoints: (
+  "tablet": 43em,
+  "laptop": 62em,
+  "desktop": 82em,
+);
