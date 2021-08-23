@@ -1,0 +1,57 @@
+@use "../abstracts" as abs;
+
+/*-----------------------------*\
+    #calculator 
+\*-----------------------------*/
+
+.calculator {
+  /*|| header --------------------------*/
+  color: var(--text-color-1);
+
+  &__header {
+    margin-top: 1.7rem;
+
+    &-wrapper {
+      @include abs.flexify($js-con: space-between);
+    }
+  }
+
+  &__logo {
+    font-size: 2rem;
+    margin-left: 0.2rem;
+  }
+
+  /*|| menu --------------------------*/
+
+  &__menu {
+    min-width: 9rem;
+    &-wrapper {
+      display: grid;
+      grid-template:
+        [row1-start] "custom toggle" [row1-end]
+        [row2-start] "heading toggle" [row2-end] / 1fr 1fr;
+    }
+
+    &-title {
+      font-size: abs.rem(11px);
+      letter-spacing: abs.rem(1.5px);
+      font-weight: 700;
+    }
+
+    &-setting {
+      grid-area: custom;
+      background: url("../assets/images/icon-cog.svg") center/contain no-repeat;
+      width: 1.3rem;
+      height: 1.3rem;
+      border: none;
+    }
+
+    &-title {
+      grid-area: heading;
+    }
+
+    &-toggle {
+      grid-area: toggle;
+    }
+  }
+}

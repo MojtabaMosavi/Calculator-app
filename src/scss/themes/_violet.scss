@@ -1,20 +1,20 @@
-.violet {
-    // background 
+.violet-theme {
+  // background
   --main-bg: hsl(268, 75%, 9%);
   --toggle-bg-keypad-bg: hsl(268, 71%, 12%);
   --screen-bg: hsl(268, 71%, 12%);
 
-  // key 
---key-bg-color-1: hsl(281, 89%, 26%);
---key-shadow-color-1: hsl(285, 91%, 52%);
---key-bg-color-2: hsl(176, 100%, 44%);
---key-shadow-color-2: hsl(177, 92%, 70%)
---key-bg-color-3: hsl(268, 47%, 21%);
---key-shadow-color-3: hsl(290, 70%, 36%);
+  // key
+  --key-bg-color-1: hsl(281, 89%, 26%);
+  --key-shadow-color-1: hsl(285, 91%, 52%);
+  --key-bg-color-2: hsl(176, 100%, 44%);
+  --key-shadow-color-2: hsl(177, 92%, 70%);
+  --key-bg-color-3: hsl(268, 47%, 21%);
+  --key-shadow-color-3: hsl(290, 70%, 36%);
 
-// text 
---text-color-3: hsl(52, 100%, 62%);
---text-color-2: hsl(198, 20%, 13%);
---text-color-1: hsl(0, 0, 100%);
---white: hsl(0,0,100%);
+  // text
+  --text-color-3: hsl(52, 100%, 62%);
+  --text-color-2: hsl(198, 20%, 13%);
+  --text-color-1: hsl(0, 0%, 100%);
+  --white: hsl(0, 0, 100%);
 }

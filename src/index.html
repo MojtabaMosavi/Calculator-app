@@ -9,51 +9,63 @@
 
   <title>Frontend Mentor | Calculator app</title>
 </head>
-<body>
+<body class="dark-theme">
 
-  <main class="app">
-    <div class="Calculator">
-      <div class="Calculator-wrapper">
+  <main class="main">
+    
+    <div class="calculator">
+      <div class="calculator-wrapper container ">
 
-        <header class="Calculator__header">
-          <div class="Calculator__header-wrapper">
-            <div class="Calculator__logo">calc</div>
+        <header class="calculator__header">
+          <div class="calculator__header-wrapper">
+            <div class="calculator__logo">calc</div>
 
-            <div class="Calculator__menu">
-              <div class="Calculator__menu-wrapper">
+            <div class="calculator__menu">
+              <div class="calculator__menu-wrapper">
 
-                <button class="Calculator__menu-setting"
-                        type="button"> custom 
-
+                <button class="calculator__menu-setting" 
+                        type="button" 
+                        aria-label="create custom theme"
+                        aria-controls="theme-dialog"
+                        title="custom theme">      
                 </button>
-                <span class="Calculator__menu-title">THEME</span>
+                <span class="calculator__menu-title">THEME</span>
 
-                <div class="Calculator__toggle toggle">
-                  <fieldset class="toggle-wrapper">
-                    <legend class="sr-only">Switch between different themes</legend>
+                <div class="calculator__menu-toggle toggle" saria-label="theme menu">
+                  <fieldset class="toggle-wrapper" >
 
-                    <label for="theme-dark">1</label>
-                    <label for="theme-light">2</label>
-                    <label for="theme-violet">3</label>
+                    <legend class="visually-hidden">Switch between different themes</legend>
 
-                    <span class="toggle__menu-wrapper">
+                    <label for="theme-dark" class="toggle__theme toggle__theme--dark"  
+                           title="change theme">1
+                    </label>
+
+                    <label for="theme-light" class="toggle__theme toggle__theme--light" 
+                           title="change theme">2
+                    </label>
+
+                    <label for="theme-violet" class="toggle__theme toggle__theme--violet" 
+                           title="change theme">3
+                    </label>
+
+                    <span class="toggle__btn">
                       <input type="radio" 
-                              class="toggle__input" 
+                              class="toggle__btn-input" 
                               id="theme-dark" 
                               name="theme-control">
 
                       <input type="radio" 
-                              class="toggle__input" 
+                              class="toggle__btn-input" 
                               id="theme-light" 
                               name="theme-control">
 
                       <input type="radio" 
-                              class="toggle__input" 
+                              class="toggle__btn-input" 
                               id="theme-violet"
                               name="theme-control" >
                       
-                      <span class="toggle__menu-bg"></span>
-                      <span class="toggle__menu-circle"></span>
+                      <span class="toggle__btn-bg"></span>
+                      <span class="toggle__btn-circle"></span>
                     </span>
                   </fieldset>
                 </div>

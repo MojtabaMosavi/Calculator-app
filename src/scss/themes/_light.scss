@@ -1,4 +1,4 @@
-.light {
+.light-theme {
   // backgrounds
   --main-bg: hsl(0, 0%, 90%);
   --toggle-bg-keypad-bg: hsl(0, 5%, 81%);
@@ -15,8 +15,8 @@
 
   //Text
 
-  --text-color-1: hsl(60, 10%, 19%);
   --text-color-3: hsl(52, 100%, 62%);
   --text-color-2: hsl(198, 20%, 13%);
+  --text-color-1: hsl(0, 0%, 100%);
   --white: hsl(0, 0, 100%);
 }

@@ -1,4 +1,4 @@
-.dark {
+.dark-theme {
   // background
   --main-bg: hsl(222, 26%, 31%);
   --toggle-bg-keypad-bg: hsl(223, 31%, 20%);
@@ -13,8 +13,8 @@
   --key-shadow-color-3: hsl(28, 16%, 65%);
 
   // text
-  --text-color-1: hsl(221, 14%, 31%);
   --text-color-3: hsl(52, 100%, 62%);
   --text-color-2: hsl(198, 20%, 13%);
+  --text-color-1: hsl(0, 0%, 100%);
   --white: hsl(0, 0, 100%);
 }

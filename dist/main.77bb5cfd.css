@@ -16,6 +16,23 @@
     #Mixins
 \*-----------------------------*/
 /*-----------------------------*\
+    #Helper
+\*-----------------------------*/
+.container {
+  margin: 0 auto;
+  max-width: 20.8rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip-path: inset(1px 1px 1px 1px);
+  white-space: nowrap;
+}
+
+/*-----------------------------*\
     #reset
 \*-----------------------------*/
 html {
@@ -33,6 +50,7 @@ html {
 body {
   min-height: 100vh;
   overflow-x: hidden;
+  background-color: var(--main-bg);
 }
 
 /*|| remove the default styles*/
@@ -80,6 +98,178 @@ for people that prefer not to see them */
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+}
+
+/*-----------------------------*\
+    #calculator 
+\*-----------------------------*/
+.calculator {
+  /*|| header --------------------------*/
+  color: var(--text-color-1);
+  /*|| menu --------------------------*/
+}
+.calculator__header {
+  margin-top: 1.7rem;
+}
+.calculator__header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.calculator__logo {
+  font-size: 2rem;
+  margin-left: 0.2rem;
+}
+.calculator__menu {
+  min-width: 9rem;
+}
+.calculator__menu-wrapper {
+  display: grid;
+  grid-template: [row1-start] "custom toggle" [row1-end] [row2-start] "heading toggle" [row2-end]/1fr 1fr;
+}
+.calculator__menu-title {
+  font-size: 0.6875rem;
+  letter-spacing: 0.09375rem;
+  font-weight: 700;
+}
+.calculator__menu-setting {
+  grid-area: custom;
+  background: url("/icon-cog.bd9c837b.svg") center/contain no-repeat;
+  width: 1.3rem;
+  height: 1.3rem;
+  border: none;
+}
+.calculator__menu-title {
+  grid-area: heading;
+}
+.calculator__menu-toggle {
+  grid-area: toggle;
+}
+
+/*-----------------------------*\
+    #toggle
+\*-----------------------------*/
+.toggle {
+  display: grid;
+  grid-template: [row1-start] "theme-dark theme-light theme-violet" [row1-end] [row2-start] "toggle toggle toggle" [row2-end]/1fr 1fr 1fr;
+  max-width: 4.3125rem;
+  /*|| toggle theme ---------------------------*/
+  /*|| toggle button ---------------------------*/
+}
+.toggle-wrapper {
+  display: contents;
+  border: none;
+}
+.toggle__theme {
+  font-size: 0.6875rem;
+  justify-self: center;
+  align-self: center;
+}
+.toggle__theme:hover {
+  filter: brightness(50%);
+}
+.toggle__theme--dark {
+  grid-area: theme-dark;
+}
+.toggle__theme--light {
+  grid-area: theme-light;
+}
+.toggle__theme--violet {
+  grid-area: theme-violet;
+}
+.toggle__btn {
+  grid-area: toggle;
+  background-color: var(--toggle-bg-keypad-bg);
+  border-radius: 0.6875rem;
+  margin-top: 0.3125rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.toggle__btn-input {
+  flex: 1;
+  height: 1.6rem;
+}
+.toggle__btn-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--toggle-bg-keypad-bg);
+}
+.toggle__btn-circle {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--key-bg-color-2);
+  border-radius: 50%;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.toggle__btn-circle--light-theme {
+  left: 38%;
+}
+.toggle__btn-circle--violet-theme {
+  left: 72%;
+}
+
+.dark-theme {
+  --main-bg: hsl(222, 26%, 31%);
+  --toggle-bg-keypad-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+  --key-bg-color-1: hsl(225, 21%, 49%);
+  --key-shadow-color-1: hsl(224, 28%, 35%);
+  --key-bg-color-2: hsl(6, 63%, 50%);
+  --key-shadow-color-2: hsl(6, 70%, 34%);
+  --key-bg-color-3: hsl(30, 25%, 89%);
+  --key-shadow-color-3: hsl(28, 16%, 65%);
+  --text-color-3: hsl(52, 100%, 62%);
+  --text-color-2: hsl(198, 20%, 13%);
+  --text-color-1: hsl(0, 0%, 100%);
+  --white: hsl(0, 0, 100%);
+}
+
+.light-theme {
+  --main-bg: hsl(0, 0%, 90%);
+  --toggle-bg-keypad-bg: hsl(0, 5%, 81%);
+  --screen-bg: hsl(0, 0%, 93%);
+  --key-bg-color-1: hsl(185, 42%, 37%);
+  --key-shadow-color-1: hsl(185, 58%, 25%);
+  --key-bg-color-2: hsl(25, 98%, 40%);
+  --key-shadow-color-2: hsl(25, 99%, 27%);
+  --key-bg-color-3: hsl(45, 7%, 89%);
+  --key-shadow-color-3: hsl(35, 11%, 61%);
+  --text-color-3: hsl(52, 100%, 62%);
+  --text-color-2: hsl(198, 20%, 13%);
+  --text-color-1: hsl(0, 0%, 100%);
+  --white: hsl(0, 0, 100%);
+}
+
+.violet-theme {
+  --main-bg: hsl(268, 75%, 9%);
+  --toggle-bg-keypad-bg: hsl(268, 71%, 12%);
+  --screen-bg: hsl(268, 71%, 12%);
+  --key-bg-color-1: hsl(281, 89%, 26%);
+  --key-shadow-color-1: hsl(285, 91%, 52%);
+  --key-bg-color-2: hsl(176, 100%, 44%);
+  --key-shadow-color-2: hsl(177, 92%, 70%);
+  --key-bg-color-3: hsl(268, 47%, 21%);
+  --key-shadow-color-3: hsl(290, 70%, 36%);
+  --text-color-3: hsl(52, 100%, 62%);
+  --text-color-2: hsl(198, 20%, 13%);
+  --text-color-1: hsl(0, 0%, 100%);
+  --white: hsl(0, 0, 100%);
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */
