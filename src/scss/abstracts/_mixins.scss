@@ -12,7 +12,7 @@
 }
 
 @mixin respond-to($breakpoint) {
-  @media screen and (min-width: map-get($source:variables.$breakPoints,$key:$breakpoint)) {
+  @media screen and (min-width: map-get($map:variables.$breakpoints,$key:$breakpoint)) {
     @content;
   }
 }

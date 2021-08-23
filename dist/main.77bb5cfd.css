@@ -22,6 +22,11 @@
   margin: 0 auto;
   max-width: 20.8rem;
 }
+@media screen and (min-width: 62em) {
+  .container {
+    max-width: 34rem;
+  }
+}
 
 .visually-hidden {
   position: absolute;
@@ -114,6 +119,7 @@ body {
   /*|| header --------------------------*/
   color: var(--text-color-1);
   /*|| menu --------------------------*/
+  /*|| laptop  --------------------------*/
 }
 .calculator__header {
   margin-top: 1.7rem;
@@ -152,6 +158,11 @@ body {
 }
 .calculator__menu-toggle {
   grid-area: toggle;
+}
+@media screen and (min-width: 62em) {
+  .calculator__header {
+    margin-top: 6.125rem;
+  }
 }
 
 /*-----------------------------*\

@@ -1,9 +1,14 @@
+@use "../abstracts" as abs;
 /*-----------------------------*\
     #Helper
 \*-----------------------------*/
 .container {
   margin: 0 auto;
   max-width: 20.8rem;
+
+  @include abs.respond-to("laptop") {
+    max-width: 34rem;
+  }
 }
 
 .visually-hidden {
