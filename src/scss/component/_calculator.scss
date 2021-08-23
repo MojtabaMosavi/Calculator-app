@@ -56,6 +56,14 @@
   }
 
   /*|| laptop  --------------------------*/
+
+  &__screen {
+    width: 100%;
+    margin-top: 2rem;
+    background-color: var(--toggle-bg-keypad-bg);
+  }
+
+  /*|| laptop  --------------------------*/
   @include abs.respond-to("laptop") {
     &__header {
       margin-top: abs.rem(98px);

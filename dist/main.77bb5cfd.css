@@ -120,6 +120,7 @@ body {
   color: var(--text-color-1);
   /*|| menu --------------------------*/
   /*|| laptop  --------------------------*/
+  /*|| laptop  --------------------------*/
 }
 .calculator__header {
   margin-top: 1.7rem;
@@ -158,6 +159,11 @@ body {
 }
 .calculator__menu-toggle {
   grid-area: toggle;
+}
+.calculator__screen {
+  width: 100%;
+  margin-top: 2rem;
+  background-color: var(--toggle-bg-keypad-bg);
 }
 @media screen and (min-width: 62em) {
   .calculator__header {
