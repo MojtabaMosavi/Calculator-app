@@ -120,6 +120,7 @@ body {
   color: var(--text-color-1);
   /*|| menu --------------------------*/
   /*|| screen  --------------------------*/
+  /*|| keyboard  --------------------------*/
   /*|| laptop  --------------------------*/
 }
 .calculator__header {
@@ -186,6 +187,10 @@ body {
   border-radius: 1rem;
   font-family: inherit;
   text-align: inherit;
+}
+.calculator__keyboard-wrapper {
+  display: grid;
+  grid-template: [row1-start] "seven eight nine del" [row1-end] [row1-start] "four five  six  plus" [row1-end] [row1-start] "three two  one  minus" [row1-end] [row1-start] "decimal   zero division  multiplication" [row1-end] [row1-start] "reset reset equality equality" [row1-end]/1fr 1fr 1fr 1fr 1fr;
 }
 @media screen and (min-width: 62em) {
   .calculator__header {
