@@ -58,15 +58,39 @@
   /*|| laptop  --------------------------*/
 
   &__screen {
-    width: 100%;
     margin-top: 2rem;
-    background-color: var(--toggle-bg-keypad-bg);
+
+    &-display {
+      display: none;
+      font-size: 0.7rem;
+      padding-right: 1rem;
+    }
+
+    &-input {
+      width: 100%;
+      text-align: right;
+      background-color: var(--toggle-bg-keypad-bg);
+      padding: 1.5rem 1.5rem 1.8rem 1.1rem;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-color-1);
+      border: none;
+      border-radius: 1rem;
+      font-family: inherit;
+    }
   }
 
   /*|| laptop  --------------------------*/
   @include abs.respond-to("laptop") {
     &__header {
       margin-top: abs.rem(98px);
+    }
+
+    &__screen {
+      &-input {
+        padding: 2rem 2rem 2.3rem 1.1rem;
+        font-size: 3rem;
+      }
     }
   }
 }

@@ -161,13 +161,32 @@ body {
   grid-area: toggle;
 }
 .calculator__screen {
-  width: 100%;
   margin-top: 2rem;
+}
+.calculator__screen-display {
+  display: none;
+  font-size: 0.7rem;
+  padding-right: 1rem;
+}
+.calculator__screen-input {
+  width: 100%;
+  text-align: right;
   background-color: var(--toggle-bg-keypad-bg);
+  padding: 1.5rem 1.5rem 1.8rem 1.1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color-1);
+  border: none;
+  border-radius: 1rem;
+  font-family: inherit;
 }
 @media screen and (min-width: 62em) {
   .calculator__header {
     margin-top: 6.125rem;
+  }
+  .calculator__screen-input {
+    padding: 2rem 2rem 2.3rem 1.1rem;
+    font-size: 3rem;
   }
 }
 
