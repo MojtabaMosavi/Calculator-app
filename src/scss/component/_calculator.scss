@@ -55,28 +55,36 @@
     }
   }
 
-  /*|| laptop  --------------------------*/
+  /*|| screen  --------------------------*/
 
   &__screen {
     margin-top: 2rem;
+    position: relative;
+
+    &-wrapper {
+      text-align: right;
+    }
 
     &-display {
-      display: none;
-      font-size: 0.7rem;
-      padding-right: 1rem;
+      position: absolute;
+      width: 100%;
+      height: auto;
+      padding: 0.5rem 1.6rem;
+      font-size: 0.6rem;
+      filter: brightness(50%);
     }
 
     &-input {
       width: 100%;
-      text-align: right;
       background-color: var(--toggle-bg-keypad-bg);
-      padding: 1.5rem 1.5rem 1.8rem 1.1rem;
+      padding: 1.5rem 1.5rem 1.66rem 1.1rem;
       font-size: 2rem;
       font-weight: 700;
       color: var(--text-color-1);
       border: none;
       border-radius: 1rem;
       font-family: inherit;
+      text-align: inherit;
     }
   }
 
