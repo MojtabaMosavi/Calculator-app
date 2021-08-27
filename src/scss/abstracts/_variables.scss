@@ -2,15 +2,19 @@
     #variables 
 \*-----------------------------*/
 
-/*|| global variables*/
+/*|| global variables----------------------------*/
 
 :root {
   --font-size-number: 2rem;
 }
 
-/*|| Breakpoint for different viewports*/
+/*|| Breakpoint for different viewports--------------------*/
 $breakpoints: (
   "tablet": 43em,
   "laptop": 62em,
   "desktop": 82em,
 );
+
+/*|| global transitions--------------------*/
+$primary-transition: all 1s ease-in-out;
+$button-transition: all 100ms ease-in-out;

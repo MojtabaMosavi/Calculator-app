@@ -12,9 +12,12 @@
   --key-bg-color-3: hsl(268, 47%, 21%);
   --key-shadow-color-3: hsl(290, 70%, 36%);
 
+  // logo
+  --logo: hsl(52, 100%, 62%);
+
   // text
-  --text-color-3: hsl(52, 100%, 62%);
-  --text-color-2: hsl(198, 20%, 13%);
-  --text-color-1: hsl(0, 0%, 100%);
-  --white: hsl(0, 0, 100%);
+  --text-color: hsl(52, 100%, 62%);
+  --equal-sign: rgb(0, 0, 0);
+
+  --white: hsl(0, 0%, 100%);
 }

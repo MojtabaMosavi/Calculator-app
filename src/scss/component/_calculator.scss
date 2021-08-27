@@ -6,10 +6,14 @@
 
 .calculator {
   /*|| header --------------------------*/
-  color: var(--text-color-1);
+  color: var(--text-color);
+
+  &-wrapper {
+    margin-top: 1.7rem;
+  }
 
   &__header {
-    margin-top: 1.7rem;
+    color: var(--logo);
 
     &-wrapper {
       @include abs.flexify($js-con: space-between);
@@ -60,6 +64,7 @@
   &__screen {
     margin-top: 2rem;
     position: relative;
+    margin-left: 0.3rem;
 
     &-wrapper {
       text-align: right;
@@ -90,28 +95,157 @@
 
   /*|| keyboard  --------------------------*/
   &__keyboard {
+    margin: 1.4rem 0 0 0.3rem;
+    padding: abs.rem(25px);
+    background: var(--toggle-bg-keypad-bg);
+    border-radius: 0.7rem;
+
     &-wrapper {
       display: grid;
       grid-template:
-        [row1-start] "seven eight nine del" [row1-end]
-        [row1-start] "four five  six  plus" [row1-end]
-        [row1-start] "three two  one  minus" [row1-end]
-        [row1-start] "decimal   zero division  multiplication" [row1-end]
-        [row1-start] "reset reset equality equality" [row1-end]
-        / 1fr 1fr 1fr 1fr 1fr;
+        [row1-start] "seven eight nine delete" [row1-end]
+        [row2-start] "four five  six  addition" [row2-end]
+        [row3-start] "one two  three  subtraction" [row3-end]
+        [row4-start] "-dot   -zero division  multiplication" [row4-end]
+        [row5-start] "-reset -reset equality equality" [row5-end]
+        / 1fr 1fr 1fr 1fr;
+      gap: abs.rem(15.5px) abs.rem(15px);
+    }
+
+    &-key {
+      font-size: var(--font-size-number);
+      font-family: inherit;
+      padding: 0.7rem 0;
+      color: var(--text-color);
+      border: none;
+      border-radius: 0.2rem;
+      background: var(--key-bg-color-3);
+      box-shadow: 0px abs.rem(4px) var(--key-shadow-color-3);
+      transition: abs.$button-transition;
+
+      &:hover {
+        filter: brightness(80%);
+      }
+
+      &:active {
+        box-shadow: 0 abs.rem(2px) var(--key-bg-color-3);
+        transform: translateY(3px);
+      }
+
+      &--zero {
+        grid-area: -zero;
+      }
+      &--one {
+        grid-area: one;
+      }
+      &--two {
+        grid-area: two;
+      }
+      &--three {
+        grid-area: three;
+      }
+      &--four {
+        grid-area: four;
+      }
+      &--five {
+        grid-area: five;
+      }
+      &--six {
+        grid-area: six;
+      }
+      &--seven {
+        grid-area: seven;
+      }
+      &--eight {
+        grid-area: eight;
+      }
+      &--nine {
+        grid-area: nine;
+      }
+      &--addition {
+        grid-area: addition;
+      }
+      &--subtraction {
+        grid-area: subtraction;
+      }
+      &--multiplication {
+        grid-area: multiplication;
+      }
+      &--division {
+        grid-area: division;
+      }
+      &--decimal {
+        grid-area: -dot;
+      }
+      &--eqality {
+        grid-area: equality;
+      }
+
+      &--delete {
+        grid-area: delete;
+      }
+      &--equality {
+        grid-area: equality;
+        font-size: 1rem;
+        background: var(--key-bg-color-2);
+        color: var(--equal-sign);
+        box-shadow: 0 abs.rem(4px) var(--key-shadow-color-2);
+
+        &:active {
+          box-shadow: 0 abs.rem(2px) var(--key-bg-color-2);
+          transform: translateY(3px);
+        }
+      }
+
+      &--reset {
+        grid-area: -reset;
+      }
+
+      &--delete,
+      &--reset {
+        font-size: 1.05rem;
+        text-transform: uppercase;
+        color: var(--white);
+        background: var(--key-bg-color-1);
+        box-shadow: 0 abs.rem(4px) var(--key-shadow-color-1);
+
+        &:active {
+          box-shadow: 0 abs.rem(2px) var(--key-bg-color-1);
+          transform: translateY(3px);
+        }
+      }
+
+      &--reset,
+      &--equality {
+        padding: 1.3rem;
+      }
     }
   }
 
   /*|| laptop  --------------------------*/
   @include abs.respond-to("laptop") {
-    &__header {
-      margin-top: abs.rem(98px);
+    &-wrapper {
+      margin: abs.rem(98px) auto;
     }
 
     &__screen {
       &-input {
         padding: 2rem 2rem 2.3rem 1.1rem;
         font-size: 3rem;
+      }
+    }
+
+    /*|| keyboard  --------------------------*/
+    &__keyboard {
+      margin-left: 0;
+      padding: 2.2rem;
+
+      &-wrapper {
+        gap: abs.rem(28px) abs.rem(27px);
+      }
+
+      &-key {
+        border-radius: 0.4rem;
       }
     }
   }

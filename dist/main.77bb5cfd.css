@@ -6,12 +6,13 @@
 /*-----------------------------*\
     #variables 
 \*-----------------------------*/
-/*|| global variables*/
+/*|| global variables----------------------------*/
 :root {
   --font-size-number: 2rem;
 }
 
-/*|| Breakpoint for different viewports*/
+/*|| Breakpoint for different viewports--------------------*/
+/*|| global transitions--------------------*/
 /*-----------------------------*\
     #Mixins
 \*-----------------------------*/
@@ -117,14 +118,17 @@ body {
 \*-----------------------------*/
 .calculator {
   /*|| header --------------------------*/
-  color: var(--text-color-1);
+  color: var(--text-color);
   /*|| menu --------------------------*/
   /*|| screen  --------------------------*/
   /*|| keyboard  --------------------------*/
   /*|| laptop  --------------------------*/
 }
-.calculator__header {
+.calculator-wrapper {
   margin-top: 1.7rem;
+}
+.calculator__header {
+  color: var(--logo);
 }
 .calculator__header-wrapper {
   display: flex;
@@ -164,6 +168,7 @@ body {
 .calculator__screen {
   margin-top: 2rem;
   position: relative;
+  margin-left: 0.3rem;
 }
 .calculator__screen-wrapper {
   text-align: right;
@@ -188,17 +193,134 @@ body {
   font-family: inherit;
   text-align: inherit;
 }
+.calculator__keyboard {
+  margin: 1.4rem 0 0 0.3rem;
+  padding: 1.5625rem;
+  background: var(--toggle-bg-keypad-bg);
+  border-radius: 0.7rem;
+}
 .calculator__keyboard-wrapper {
   display: grid;
-  grid-template: [row1-start] "seven eight nine del" [row1-end] [row1-start] "four five  six  plus" [row1-end] [row1-start] "three two  one  minus" [row1-end] [row1-start] "decimal   zero division  multiplication" [row1-end] [row1-start] "reset reset equality equality" [row1-end]/1fr 1fr 1fr 1fr 1fr;
+  grid-template: [row1-start] "seven eight nine delete" [row1-end] [row2-start] "four five  six  addition" [row2-end] [row3-start] "one two  three  subtraction" [row3-end] [row4-start] "-dot   -zero division  multiplication" [row4-end] [row5-start] "-reset -reset equality equality" [row5-end]/1fr 1fr 1fr 1fr;
+  gap: 0.96875rem 0.9375rem;
+}
+.calculator__keyboard-key {
+  font-size: var(--font-size-number);
+  font-family: inherit;
+  padding: 0.7rem 0;
+  color: var(--text-color);
+  border: none;
+  border-radius: 0.2rem;
+  background: var(--key-bg-color-3);
+  box-shadow: 0px 0.25rem var(--key-shadow-color-3);
+  transition: all 100ms ease-in-out;
+}
+.calculator__keyboard-key:hover {
+  filter: brightness(80%);
+}
+.calculator__keyboard-key:active {
+  box-shadow: 0 0.125rem var(--key-bg-color-3);
+  transform: translateY(3px);
+}
+.calculator__keyboard-key--zero {
+  grid-area: -zero;
+}
+.calculator__keyboard-key--one {
+  grid-area: one;
+}
+.calculator__keyboard-key--two {
+  grid-area: two;
+}
+.calculator__keyboard-key--three {
+  grid-area: three;
+}
+.calculator__keyboard-key--four {
+  grid-area: four;
+}
+.calculator__keyboard-key--five {
+  grid-area: five;
+}
+.calculator__keyboard-key--six {
+  grid-area: six;
+}
+.calculator__keyboard-key--seven {
+  grid-area: seven;
+}
+.calculator__keyboard-key--eight {
+  grid-area: eight;
+}
+.calculator__keyboard-key--nine {
+  grid-area: nine;
+}
+.calculator__keyboard-key--addition {
+  grid-area: addition;
+}
+.calculator__keyboard-key--subtraction {
+  grid-area: subtraction;
+}
+.calculator__keyboard-key--multiplication {
+  grid-area: multiplication;
+}
+.calculator__keyboard-key--division {
+  grid-area: division;
+}
+.calculator__keyboard-key--decimal {
+  grid-area: -dot;
+}
+.calculator__keyboard-key--eqality {
+  grid-area: equality;
+}
+.calculator__keyboard-key--delete {
+  grid-area: delete;
+}
+.calculator__keyboard-key--equality {
+  grid-area: equality;
+  font-size: 1rem;
+  background: var(--key-bg-color-2);
+  color: var(--equal-sign);
+  box-shadow: 0 0.25rem var(--key-shadow-color-2);
+}
+.calculator__keyboard-key--equality:active {
+  box-shadow: 0 0.125rem var(--key-bg-color-2);
+  transform: translateY(3px);
+}
+.calculator__keyboard-key--reset {
+  grid-area: -reset;
+}
+.calculator__keyboard-key--delete, .calculator__keyboard-key--reset {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--key-bg-color-1);
+  box-shadow: 0 0.25rem var(--key-shadow-color-1);
+}
+.calculator__keyboard-key--delete:active, .calculator__keyboard-key--reset:active {
+  box-shadow: 0 0.125rem var(--key-bg-color-1);
+  transform: translateY(3px);
+}
+.calculator__keyboard-key--reset, .calculator__keyboard-key--equality {
+  padding: 1.3rem;
 }
 @media screen and (min-width: 62em) {
-  .calculator__header {
-    margin-top: 6.125rem;
+  .calculator {
+    /*|| keyboard  --------------------------*/
+  }
+  .calculator-wrapper {
+    margin: 6.125rem auto;
   }
   .calculator__screen-input {
     padding: 2rem 2rem 2.3rem 1.1rem;
     font-size: 3rem;
+  }
+  .calculator__keyboard {
+    margin-left: 0;
+    padding: 2.2rem;
+  }
+  .calculator__keyboard-wrapper {
+    gap: 1.75rem 1.6875rem;
+  }
+  .calculator__keyboard-key {
+    border-radius: 0.4rem;
   }
 }
 
@@ -282,10 +404,10 @@ body {
   --key-shadow-color-2: hsl(6, 70%, 34%);
   --key-bg-color-3: hsl(30, 25%, 89%);
   --key-shadow-color-3: hsl(28, 16%, 65%);
-  --text-color-3: hsl(52, 100%, 62%);
-  --text-color-2: hsl(198, 20%, 13%);
-  --text-color-1: hsl(0, 0%, 100%);
-  --white: hsl(0, 0, 100%);
+  --logo: hsl(0, 0%, 100%);
+  --text-color: hsl(223, 31%, 20%);
+  --equal-sign: hsl(0, 0%, 100%);
+  --white: hsl(0, 0%, 100%);
 }
 
 .light-theme {
@@ -298,10 +420,11 @@ body {
   --key-shadow-color-2: hsl(25, 99%, 27%);
   --key-bg-color-3: hsl(45, 7%, 89%);
   --key-shadow-color-3: hsl(35, 11%, 61%);
-  --text-color-3: hsl(52, 100%, 62%);
-  --text-color-2: hsl(198, 20%, 13%);
-  --text-color-1: hsl(0, 0%, 100%);
-  --white: hsl(0, 0, 100%);
+  --logo: hsl(198, 20%, 13%);
+  --text-color: hsl(0, 0, 100%);
+  --text-color-1: hsl(198, 20%, 13%);
+  --equal-sign: hsl(0, 0%, 100%);
+  --white: hsl(0, 0%, 100%);
 }
 
 .violet-theme {
@@ -314,10 +437,10 @@ body {
   --key-shadow-color-2: hsl(177, 92%, 70%);
   --key-bg-color-3: hsl(268, 47%, 21%);
   --key-shadow-color-3: hsl(290, 70%, 36%);
-  --text-color-3: hsl(52, 100%, 62%);
-  --text-color-2: hsl(198, 20%, 13%);
-  --text-color-1: hsl(0, 0%, 100%);
-  --white: hsl(0, 0, 100%);
+  --logo: hsl(52, 100%, 62%);
+  --text-color: hsl(52, 100%, 62%);
+  --equal-sign: rgb(0, 0, 0);
+  --white: hsl(0, 0%, 100%);
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */
