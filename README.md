@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./design/desktop-design.jpg)
+![](./design/desktop-design-theme1.jpg)
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
@@ -49,11 +49,12 @@ Users should be able to:
 ### What I learned
 
 1- How to use the prefers-color-scheme to detect the user's system level theme setting and adjusting the theme accordingly.
-2- Improved my knowledge about grid. 
+2- Improved my knowledge about grid.
+3- How to implement theming functionality and make it accessible but there is alot for me to learn about this topic.
 
 ### Continued development
 
 1- Deepening my knowledge about accessibility and bem.
 2- Try new features of js.
 3- Leaning more about git 
-
+4- Experiment with css properties that I don't use often. 
