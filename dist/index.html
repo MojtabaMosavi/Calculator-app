@@ -6,7 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.7d369b0f.png">
   <link rel="stylesheet" href="/main.77bb5cfd.css">
-
+  <script src="/main.fb6bbcaf.js" defer=""></script>
   <title>Frontend Mentor | Calculator app</title>
 <script src="/main.77bb5cfd.js"></script></head>
 <body class="dark-theme">
@@ -27,32 +27,26 @@
                 </button>
                 <span class="calculator__menu-title">THEME</span>
 
-                <div class="calculator__menu-toggle toggle" saria-label="theme menu">
-                  <fieldset class="toggle-wrapper">
+                <div class="calculator__menu-toggle toggle" aria-label="theme menu">
+                    <span class="toggle__theme toggle__theme--dark" aria-hidden="true">1</span>
+                    <span class="toggle__theme toggle__theme--light" aria-hidden="true">2</span>
+                    <span class="toggle__theme toggle__theme--violet" aria-hidden="true">3</span>
 
-                    <legend class="visually-hidden">Switch between different themes</legend>
-
-                    <label for="theme-dark" class="toggle__theme toggle__theme--dark" title="change theme">1
-                    </label>
-
-                    <label for="theme-light" class="toggle__theme toggle__theme--light" title="change theme">2
-                    </label>
-
-                    <label for="theme-violet" class="toggle__theme toggle__theme--violet" title="change theme">3
-                    </label>
-
-                    <span class="toggle__btn">
-                      <input type="radio" class="toggle__btn-input" id="theme-dark" name="theme-control">
-
-                      <input type="radio" class="toggle__btn-input" id="theme-light" name="theme-control">
-
-                      <input type="radio" class="toggle__btn-input" id="theme-violet" name="theme-control">
+                    <span class="toggle__menu">
+                      <button class="toggle__menu-input toggle__menu-input--dark-theme" aria-label="dark-theme" aria-checked="false" type="button">
+                      </button>
                       
-                      <span class="toggle__btn-bg"></span>
-                      <span class="toggle__btn-circle"></span>
+                      <button class="toggle__menu-input toggle__menu-input--light-theme" aria-label="light-theme" aria-checked="false" type="button">
+                      </button>
+
+                      <button class="toggle__menu-input toggle__menu-input--violet-theme" aria-label="violet-theme" aria-checked="false" type="button">
+                      </button>
+                      <span class="toggle__menu-circle"></span>
                     </span>
-                  </fieldset>
                 </div><!-- End of toggle-->
+
+
+                
               </div>
             </div><!--End of menu-->
           </div>
@@ -60,9 +54,9 @@
 
         <div class="calculator__screen">
           <div class="calculator__screen-wrapper">
-            <span class="calculator__screen-display"></span>
+            <span class="calculator__screen-display" aria-hidden="true"></span>
             <label for="screen" class="visually-hidden">calculator screen </label>
-            <input type="text" class="calculator__screen-input" id="screen">
+            <input type="text" class="calculator__screen-input" id="screen" maxlength="12">
           </div>
         </div><!--End of screen-->
 
@@ -70,64 +64,65 @@
 
         <div class="calculator__keyboard" aria-label="calculator keyboard">
           <div class="calculator__keyboard-wrapper">
-            <button class="calculator__keyboard-key calculator__keyboard-key--zero" data-value="0">0
+            <button class="calculator__keyboard-key calculator__keyboard-key--zero" data-value="0" data-input="operand" type="button">0
             </button>
 
-            <button class="calculator__keyboard-key calculator__keyboard-key--one" data-value="1">1
+            <button class="calculator__keyboard-key calculator__keyboard-key--one" data-value="1" data-input="operand" type="button">1
             </button>
 
-            <button class="calculator__keyboard-key calculator__keyboard-key--two" data-value="2">2
+            <button class="calculator__keyboard-key calculator__keyboard-key--two" data-value="2" data-input="operand" type="button">2
             </button>
             
-            <button class="calculator__keyboard-key calculator__keyboard-key--three" data-value="3">3
+            <button class="calculator__keyboard-key calculator__keyboard-key--three" data-value="3" data-input="operand" type="button">3
             </button>
 
-            <button class="calculator__keyboard-key calculator__keyboard-key--four" data-value="4">4
+            <button class="calculator__keyboard-key calculator__keyboard-key--four" data-value="4" data-input="operand" type="button">4
             </button>
 
-            <button class="calculator__keyboard-key calculator__keyboard-key--five" data-value="5">5
+            <button class="calculator__keyboard-key calculator__keyboard-key--five" data-value="5" data-input="operand" type="button">5
             </button>
 
-            <button class="calculator__keyboard-key calculator__keyboard-key--six" data-value="6">6
+            <button class="calculator__keyboard-key calculator__keyboard-key--six" data-value="6" data-input="operand" type="button">6
             </button>
 
-            <button class="calculator__keyboard-key calculator__keyboard-key--seven" data-value="7">7
+            <button class="calculator__keyboard-key calculator__keyboard-key--seven" data-value="7" data-input="operand" type="button">7
             </button>
 
-            <button class="calculator__keyboard-key calculator__keyboard-key--eight" data-value="8">8
+            <button class="calculator__keyboard-key calculator__keyboard-key--eight" data-value="8" data-input="operand" type="button">8
             </button>
 
-            <button class="calculator__keyboard-key calculator__keyboard-key--nine" data-value="9">9
+            <button class="calculator__keyboard-key calculator__keyboard-key--nine" data-value="9" data-input="operand" accesskey="9" type="button">9
             </button>
 
-            <button class="calculator__keyboard-key calculator__keyboard-key--addition" data-value="+">+
+            <button class="calculator__keyboard-key calculator__keyboard-key--addition" data-value="+" aria-label="addition" data-input="operator" type="button">+
             </button>
 
-            <button class="calculator__keyboard-key calculator__keyboard-key--subtraction" data-value="-">-
+            <button class="calculator__keyboard-key calculator__keyboard-key--subtraction" data-value="-" aria-label="subtraction" data-input="operator" type="button">-
             </button>
 
-            <button class="calculator__keyboard-key calculator__keyboard-key--multiplication" data-value="*">x
+            <button class="calculator__keyboard-key calculator__keyboard-key--multiplication" data-value="*" aria-label="multiplication" data-input="operator" type="button">x
             </button>
 
-            <button class="calculator__keyboard-key calculator__keyboard-key--division" data-value="/">/
+            <button class="calculator__keyboard-key calculator__keyboard-key--division" data-value="/" aria-label="division" data-input="operator" type="button">/
             </button>
 
-            <button class="calculator__keyboard-key calculator__keyboard-key--decimal" data-value=".">.
+            <button class="calculator__keyboard-key calculator__keyboard-key--decimal" data-value="." data-input="operand" type="button">.
             </button>
 
-            <button class="calculator__keyboard-key calculator__keyboard-key--delete" data-value="del">del
+            <button class="calculator__keyboard-key calculator__keyboard-key--delete" data-value="delete" aria-label="delete" data-input="setting" type="button">del
             </button>
 
-            <button class="calculator__keyboard-key calculator__keyboard-key--equality" data-value="=">=
+            <button class="calculator__keyboard-key calculator__keyboard-key--equality" data-value="=" type="button" data-input="operator">=
+        
             </button>
 
-            <button class="calculator__keyboard-key calculator__keyboard-key--reset" data-value="reset">reset
+            <button class="calculator__keyboard-key calculator__keyboard-key--reset" data-value="reset" type="reset" data-input="setting" aria-controls="screen">reset
             </button>
           </div>
         </div>
 
       </div>
-    </div>
+    </div><!-- End of calculator-->
   </main>
 
 </body>

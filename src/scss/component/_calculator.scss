@@ -7,6 +7,7 @@
 .calculator {
   /*|| header --------------------------*/
   color: var(--text-color);
+  transition: abs.$primary-transition;
 
   &-wrapper {
     margin-top: 1.7rem;
@@ -65,6 +66,7 @@
     margin-top: 2rem;
     position: relative;
     margin-left: 0.3rem;
+    color: var(--logo);
 
     &-wrapper {
       text-align: right;
@@ -85,7 +87,7 @@
       padding: 1.5rem 1.5rem 1.66rem 1.1rem;
       font-size: 2rem;
       font-weight: 700;
-      color: var(--text-color-1);
+      color: var(--logo);
       border: none;
       border-radius: 1rem;
       font-family: inherit;
@@ -122,6 +124,13 @@
       background: var(--key-bg-color-3);
       box-shadow: 0px abs.rem(4px) var(--key-shadow-color-3);
       transition: abs.$button-transition;
+
+      &--active {
+        @extend .calculator__keyboard-key;
+        box-shadow: 0 abs.rem(2px) var(--key-bg-color-3);
+        transform: translateY(3px);
+        filter: brightness(80%);
+      }
 
       &:hover {
         filter: brightness(80%);
@@ -225,27 +234,50 @@
   /*|| laptop  --------------------------*/
   @include abs.respond-to("laptop") {
     &-wrapper {
-      margin: abs.rem(98px) auto;
+      margin: 1rem auto;
     }
 
     &__screen {
+      margin-top: 1rem;
       &-input {
         padding: 2rem 2rem 2.3rem 1.1rem;
         font-size: 3rem;
+      }
+      &-display {
+        font-size: 0.7rem;
       }
     }
 
     /*|| keyboard  --------------------------*/
     &__keyboard {
-      margin-left: 0;
+      margin: 1rem 0 0 0;
       padding: 2.2rem;
 
       &-wrapper {
-        gap: abs.rem(28px) abs.rem(27px);
+        gap: 1rem 1.5rem;
       }
 
       &-key {
         border-radius: 0.4rem;
+      }
+    }
+  }
+
+  /*|| desktop  --------------------------*/
+  @include abs.respond-to("desktop") {
+    &-wrapper {
+      margin: abs.rem(98px) auto;
+    }
+
+    &__screen {
+      margin-top: 2rem;
+    }
+
+    &__keyboard {
+      margin: 1.4rem 0 0 0;
+
+      &-wrapper {
+        gap: abs.rem(28px) abs.rem(27px);
       }
     }
   }

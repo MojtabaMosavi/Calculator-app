@@ -2,6 +2,7 @@
 /*-----------------------------*\
     #toggle
 \*-----------------------------*/
+
 .toggle {
   display: grid;
   grid-template:
@@ -21,10 +22,6 @@
     justify-self: center;
     align-self: center;
 
-    &:hover {
-      filter: brightness(50%);
-    }
-
     &--dark {
       grid-area: theme-dark;
     }
@@ -38,8 +35,8 @@
     }
   }
 
-  /*|| toggle button ---------------------------*/
-  &__btn {
+  /*|| toggle menu ---------------------------*/
+  &__menu {
     grid-area: toggle;
     background-color: var(--toggle-bg-keypad-bg);
     border-radius: abs.rem(11px);
@@ -51,6 +48,8 @@
     &-input {
       flex: 1;
       height: 1.6rem;
+      border: none;
+      background-color: var(--toggle-bg-keypad-bg);
     }
 
     &-bg {
@@ -69,7 +68,7 @@
       left: 5%;
       top: 50%;
       transform: translateY(-50%);
-
+      transition: abs.$toggle-transition;
       &--light-theme {
         left: 38%;
       }
